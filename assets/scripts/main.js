@@ -10,13 +10,13 @@ function numberChange() {
   var number = document.getElementById("volume-number");
   var slide = document.getElementById("volume-slider");
   var audio = document.getElementById("horn-sound");
-  number.innerHTML = slider.value;
+  //umber.innerHTML = slider.value;
 
   audio.volume = parseInt(slide.value)/100;
   number.value = slide.value;
-  slider.oninput = function() {
-    number.innerHTML = this.value;
-  }
+  //slider.oninput = function() {
+  //  number.innerHTML = this.value;
+  //}
   iconVolChange(number.value);
 }
 
@@ -44,9 +44,9 @@ function iconVolChange(value) {
     honkbutton.disabled = true;
   }
   else {
-    if (volume < 34)
+    if (value < 34)
       volume.setAttribute("src","./assets/media/icons/volume-level-1.svg");
-    else if (volume < 67)
+    else if (value < 67)
       volume.setAttribute("src","./assets/media/icons/volume-level-2.svg");
     else 
       volume.setAttribute("src","./assets/media/icons/volume-level-3.svg");
